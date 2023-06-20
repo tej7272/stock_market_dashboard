@@ -1,0 +1,188 @@
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+ }
+
+ .container{
+    width: 510px;
+    height: 100vh;
+    display: flex;
+    /* flex-direction: column; */
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+ }
+ .dashboard{
+    background-color: rgb(172, 166, 166);
+    padding: 15px 30px;
+    border-radius: 15px;
+ }
+
+ .dashboard>h1{
+    font-size: 25px;
+ }
+ 
+ .content{
+     margin: 15px;
+     background-color: rgb(243, 236, 236);
+     width: 90%;
+     display: flex;
+     flex-flow: column;
+     align-items: center;
+     /* position: relative; */
+     border-radius: 15px;
+     /* height:40vh */
+     
+    }
+    .searchBar{
+        padding: 10px;
+        width: 100%;
+        height: 30px;
+        margin-bottom: 40px;
+        text-align: center;
+        /* position: relative; */
+    }
+    
+    #symbol-input{
+        display: inline-block;
+        width: 360px;
+        height: 45px;
+        margin: 8px;
+        background-color: rgb(172, 166, 166);
+        font-size: 18px;
+        border:0;
+        border-radius: 15px;
+        padding-left:15px ;
+        outline: none;
+
+    }
+    ::placeholder{
+        color: black;
+    }
+    
+    #button-icon{
+        background-color: rgb(172, 166, 166);
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        text-align: center;
+        padding-top:15px;
+     }
+      #add-button{
+        border: 0;
+        cursor: pointer;
+     }
+
+     .btn{
+        /* position: relative; */
+        margin-bottom: 10px;
+        text-align: center;
+     }
+     .btn>.timeframe-button{
+        width: 200px;
+        height: 40px;
+        margin: 10px 5px;
+        border: 0;
+        border-radius: 25px;
+        background-color: rgb(172, 166, 166);
+        font-family:inherit;
+        font-size: 18px;
+        cursor: pointer;
+     }
+     .timeframe-btn.active {
+        background-color: #007bff;
+        color: #fff;
+      }
+
+      .watchlist{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top:5px;
+        margin-bottom: 20px;
+        border-radius: 20px;
+        
+     }
+
+     #watchlist-header{
+        background-color: rgb(196, 193, 193);
+        margin-bottom: 20px;
+        padding: 7px;
+        border-radius: 20px;
+        width: 358px;
+        text-align: center;
+     }
+     #watchlist-header>h1{
+        font-size: 25px;
+        opacity: .5;
+     }
+
+     .watchlist>.stock-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(196, 193, 193);
+        margin-bottom: 10px;
+        padding: 20px;
+        width: 430px;
+        height:55px;
+        border-radius: 20px;
+     }
+     div.symbol{
+            width: 80px;
+     }
+     button.price{
+        border: 0;
+        color: black;
+        width: 90px;
+        height: 40px;
+        font-size: 18px;
+        border-radius: 15px;
+        background-color: aquamarine;
+        cursor: pointer;
+
+     }
+
+     
+
+     div.timeframe{
+        background-color: white;
+        width: 120px;
+        height: 40px;
+        border-radius: 15px;
+        padding-top: 10px;
+        text-align: center;
+     }
+     .delete-btn{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        font-size: 35px;
+        border:0;
+        cursor: pointer;
+        color: white;
+        background-color: rgb(196, 48, 48);
+
+     }
+
+     /* styling for model container */
+     #modal-body{
+        width: 430px;
+        text-align: center;
+        margin-bottom:20px ;
+        margin-top: 5px;
+
+
+     }
+     #modal-body th{
+        margin: 30px;
+     }
+     #modal-body table td{
+        font-size: 12px;
+        padding: 1px 10px;
+     }
+
+     

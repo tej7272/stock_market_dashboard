@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Market Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="dashboard">
+            <h1>
+                <i class="fa fa-arrow-up fa-sm" style="color: #51f415;"></i>
+                STOCK MARKET DASHBOARD
+                <i class="fa fa-arrow-down fa-sm" style="color: #de0d0d;"></i>
+            </h1>
+        </div>
+        <div class="content">
+            <div class="searchBar">
+                <form action="#">
+                    <input type="text" placeholder="Search for symbol...." id="symbol-input" name="searchBar">
+                    <button id="add-button"><i class="fa fa-search fa-lg" style="color: #f0f1f5;"
+                            id="button-icon"></i></button>
+                </form>
+            </div>
+            <div class="btn" id="timeframe-buttons">
+                <button class="timeframe-button" data-timeframe="intraday" id="btn-intraday">INTRADAY</button>
+                <button class="timeframe-button" data-timeframe="daily" id="btn-daily">DAILY</button>
+                <button class="timeframe-button" data-timeframe="weekly" id="btn-weekly">WEEKLY</button>
+                <button class="timeframe-button" data-timeframe="monthly" id="btn-monthly">MONTHLY</button>
+            </div>
+        </div>
+        <div class="content">
+            <div class="watchlist" id="watchlist-section">
+                <div id="watchlist-header">
+                    <h1>YOUR WATCHLIST</h1>
+                </div>
+                <!-- Stock cards will be dynamically added here -->
+            </div>
+            <div id="modal-container" class="modal">
+                    <div id="modal-body"></div>
+            </div>
+        </div>
+    </div>
+    <script src="Js/script.js"></script>
+</body>
+
+</html>
