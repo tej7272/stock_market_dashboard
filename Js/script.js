@@ -71,18 +71,22 @@ addButton.addEventListener("click", function () {
 });
 
 // Event listener for timeframe button clicks
-timeframeButtons.forEach(function (button) {
-    button.addEventListener("click", function () {
-        // Remove 'active' class from all buttons
-        timeframeButtons.forEach(function (btn) {
-            btn.classList.remove("active");
-        });
+var timeframeButton = document.querySelectorAll(".timeframe-button");
 
-        // Add 'active' class to the clicked button
-        button.classList.add("active");
-        button.style.backgroundColor = 'red';
+timeframeButton.forEach(function (button) {
+  button.addEventListener("click", function () {
+    // Remove 'active' class from all buttons
+    timeframeButton.forEach(function (btn) {
+      btn.classList.remove("active");
+      btn.style.backgroundColor = ''; // Reset background color of all buttons
     });
+
+    // Add 'active' class to the clicked button
+    button.classList.add("active");
+    button.style.backgroundColor = 'red';
+  });
 });
+
 
 // Function to show modal with stock data
 async function showModal(symbol, timeframe) {
