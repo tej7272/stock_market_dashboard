@@ -7,13 +7,13 @@
 
  .container{
     width: 510px;
-    height: 100vh;
     display: flex;
     /* flex-direction: column; */
     flex-flow: column;
     justify-content: center;
     align-items: center;
     margin: auto;
+    margin-top:30px;
  }
  .dashboard{
     background-color: rgb(172, 166, 166);
@@ -186,3 +186,28 @@
      }
 
      
+
+     @media  screen and  (max-width:450px){
+      .container{
+         width:450px;
+      }
+      .dashboard>h1{
+         font-size: 21px;
+      }
+      #symbol-input{
+         width:300px;
+      }
+
+       .btn>.timeframe-button{
+        width: 350px;
+     }
+     .watchlist>.stock-card {
+      width: 380px;
+   }
+   #modal-body{
+      width: 380px;
+
+
+   }
+
+     }
