@@ -206,8 +206,9 @@
    }
    #modal-body{
       width: 380px;
-
-
+   }
+   #modal-body table td{
+      font-size: 11px;
    }
 
      }
