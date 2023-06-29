@@ -92,10 +92,10 @@
         font-size: 18px;
         cursor: pointer;
      }
-     .timeframe-btn.active {
+      .timeframe-btn.active {
         background-color: #007bff;
         color: #fff;
-      }
+      } 
 
       .watchlist{
         display: flex;

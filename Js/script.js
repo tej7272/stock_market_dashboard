@@ -117,7 +117,7 @@ async function showModal(symbol, timeframe) {
   <table>
     <thead>
       <tr>
-        <th>${stockDataPoints[0].date.split(' ')[0].substring(0,10)}</th>
+        <th>Date</th>
         <th>Open</th>
         <th>High</th>
         <th>Low</th>
@@ -135,7 +135,8 @@ const tableBody = modalBody.querySelector('tbody');
 stockDataPoints.forEach(stockData => {
   const tableRow = document.createElement('tr');
   tableRow.innerHTML = `
-    <td>${stockData.date.split(' ')[1].substring(0, 5)}</td>
+    
+    <td>${stockData.date}</td>
     <td>${stockData.open}</td>
     <td>${stockData.high}</td>
     <td>${stockData.low}</td>
@@ -153,30 +154,30 @@ stockDataPoints.forEach(stockData => {
         });
       
 }
-
 function processData(data) {
-    const timeSeriesKey = Object.keys(data)[1]; // Assuming the time series data is stored at the second key
-    const timeSeriesData = data[timeSeriesKey];
-    const lastRefreshedDates = Object.keys(timeSeriesData);
-    const lastFiveDates = lastRefreshedDates.slice(-5); // Retrieve the last five dates
+  const timeSeriesKey = Object.keys(data)[1]; // Assuming the time series data is stored at the second key
+  const timeSeriesData = data[timeSeriesKey];
+  const lastRefreshedDates = Object.keys(timeSeriesData);
 
-    const stockDataPoints = lastFiveDates.map(date => {
-        const stockOpen = Math.floor(timeSeriesData[date]['1. open'] * 100)/100;
-        const stockHigh = Math.floor(timeSeriesData[date]['2. high'] *100)/100 ;
-        const stockLow = Math.floor(timeSeriesData[date]['3. low'] *100)/100;
-        const stockClose =Math.floor( timeSeriesData[date]['4. close']*100)/100;
-        const stockVolume = timeSeriesData[date]['5. volume'];
+  const lastFiveDates = lastRefreshedDates.slice(0, 5).reverse(); // Retrieve the most recent five dates and reverse the array
 
-        return {
-            date: date,
-            open: stockOpen,
-            high: stockHigh,
-            low: stockLow,
-            close: stockClose,
-            volume: stockVolume,
-        };
-    });
+  const stockDataPoints = lastFiveDates.map(date => {
+      const stockOpen = Math.floor(timeSeriesData[date]['1. open'] * 100) / 100;
+      const stockHigh = Math.floor(timeSeriesData[date]['2. high'] * 100) / 100;
+      const stockLow = Math.floor(timeSeriesData[date]['3. low'] * 100) / 100;
+      const stockClose = Math.floor(timeSeriesData[date]['4. close'] * 100) / 100;
+      const stockVolume = timeSeriesData[date]['5. volume'];
 
-    return stockDataPoints;
+      return {
+          date: date,
+          open: stockOpen,
+          high: stockHigh,
+          low: stockLow,
+          close: stockClose,
+          volume: stockVolume,
+      };
+  });
+
+  return stockDataPoints;
 }
 
